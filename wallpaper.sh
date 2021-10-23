@@ -11,7 +11,7 @@ frame=0
 
 while true
 do
-  image=$(pwd)/wallpaper/frame-$frame.png
+  image=$(pwd)/$1/frame-$frame.png
   # echo $image
 
   if ! [ -f "$image" ]; then
