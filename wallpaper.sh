@@ -9,6 +9,16 @@ printout() {
 
 frame=0
 
+if ! [ -d "$1" ]; then
+  echo "Input folder not found."
+  exit 1
+fi
+
+if ! [ -f "$1/frame-0.png" ]; then
+  echo "Invalid input folder."
+  exit 1
+fi
+
 while true
 do
   image=$(pwd)/$1/frame-$frame.png
