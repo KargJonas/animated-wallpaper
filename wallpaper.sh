@@ -22,14 +22,14 @@ fi
 
 while true
 do
-  image=$(pwd)/$wallpaper_path/frame-$frame.png
-  # echo $image
+  image=$wallpaper_path/frame-$frame.png
 
   if ! [ -f "$image" ]; then
     frame=0
     continue
   fi
 
+  echo "feh"
   feh --bg-fill $image
 
   ((frame++))
