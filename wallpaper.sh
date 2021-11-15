@@ -8,20 +8,21 @@ printout() {
 }
 
 frame=0
+wallpaper_path="${BASH_SOURCE%/*}/$1"
 
-if ! [ -d "$1" ]; then
+if ! [ -d "$wallpaper_path" ]; then
   echo "Input folder not found."
   exit 1
 fi
 
-if ! [ -f "$1/frame-0.png" ]; then
+if ! [ -f "$wallpaper_path/frame-0.png" ]; then
   echo "Invalid input folder."
   exit 1
 fi
 
 while true
 do
-  image=$(pwd)/$1/frame-$frame.png
+  image=$(pwd)/$wallpaper_path/frame-$frame.png
   # echo $image
 
   if ! [ -f "$image" ]; then
